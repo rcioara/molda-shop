@@ -27,6 +27,7 @@ public class ProductService {
 
     public void save(ProductDTO productDTO){
         Product product = productConverter.convert(productDTO);
+        photoRepository.save(product.getPhoto());
         productRepository.save(product);
     }
 
